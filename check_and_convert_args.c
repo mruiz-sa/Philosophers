@@ -2,6 +2,26 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+int	mutex_init(t_all *all)
+{
+	int	i;
+
+	i = 0;
+	all->fork_mutex = malloc(sizeof(phtread_mutex_t) * all->philo_nb);
+	if(!all->fork_mutex)
+	{
+		free(all->fork_mutex);
+		return (0);
+	}
+	while (i < all->philo_nb)
+	{
+		pthread_mutex_init(&all->fork_mutex[i], NULL);
+		i++;
+	}
+	pthread_mutex_init(&all->mutex, NULL);
+	return (1);
+}
+
 int	convert(t_all *all, char **av)
 {
 	all->philo_nb = ft_atoi(av[1]);
@@ -12,6 +32,12 @@ int	convert(t_all *all, char **av)
 		all->meals_nb = ft_atoi(av[5]);
 	else
 		all->meals_nb = -1;
+	all->philo_dead = 0;
+	if (mutex_init(all) == 0)
+		return (0);
+	if (set_philo_stats(all) == 0)
+		return (0);
+	return (1);
 }
 
 int	is_digit(char *str)
