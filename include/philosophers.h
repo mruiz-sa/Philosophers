@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:57 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/08 12:05:47 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/09 13:42:19 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ typedef struct s_philo
 	int				last_meal;
 	int				id;
 	int				is_eating;
+	pthread_t		thread_id;
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;
+	struct s_all	*all;
 }	t_philo;
 
 typedef struct s_all
@@ -36,14 +38,17 @@ typedef struct s_all
 	int				time_to_sleep;
 	int				meals_nb;
 	int				philo_dead;
+	int				time;
 	pthread_mutex_t	mutex;
 	pthread_mutex_t	*fork_mutex;
 	t_philo			*philo;
 }	t_all;
 
-int	check_args(int ac, char **av);
-int	convert(t_all *all, char **av);
-int	ft_atoi(char *str);
-int	set_philo_stats(t_all *all);
+int		check_args(int ac, char **av);
+int		convert(t_all *all, char **av);
+int		ft_atoi(char *str);
+int		set_philo_stats(t_all *all);
+int		set_time(void);
+void	start_routine(t_all *all);
 
 #endif

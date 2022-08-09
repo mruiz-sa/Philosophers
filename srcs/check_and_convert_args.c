@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:51 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/08 12:10:27 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/09 10:41:09 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int	mutex_init(t_all *all)
+int	fork_mutex_init(t_all *all)
 {
 	int	i;
 
@@ -45,7 +45,7 @@ int	convert(t_all *all, char **av)
 	else
 		all->meals_nb = -1;
 	all->philo_dead = 0;
-	if (mutex_init(all) == 0)
+	if (fork_mutex_init(all) == 0)
 		return (0);
 	if (set_philo_stats(all) == 0)
 		return (0);
