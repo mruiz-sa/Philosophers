@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:41 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/09 13:30:19 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/09 18:34:42 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	set_philo_stats(t_all *all)
 		all->philo[i].last_meal = 0;
 		all->philo[i].is_eating = 0;
 		all->philo[i].meals_nb = 0;
-		all->philo[i].id = i;
+		all->philo[i].id = i + 1;
 		all->philo[i].left_fork = &all->fork_mutex[i];
 		all->philo[i].right_fork = &all->fork_mutex[(i + 1) % all->philo_nb];
 		all->philo[i].all = all;
