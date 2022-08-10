@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 11:02:20 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/09 19:08:27 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/10 12:25:20 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,25 @@
 #include<sys/time.h>
 #include<stdlib.h>
 #include<pthread.h>
+#include<stdio.h>
+
+void	ft_sleep(int time_to_eat, t_philo *philo)
+{
+	int	start;
+
+	start = set_time();
+	while ((set_time() - start) < time_to_eat
+		&& dead_checker(philo) == 0)
+		usleep(50);
+}
 
 void	print_actions(t_philo *philo, char *str)
 {
 	if (dead_checker(philo) == 0)
 	{
 		pthread_mutex_lock(&philo->all->mutex);
-		printf("%d %d %s\n", set_time() - philo->all->time, philo->id, str);
+		printf("%d %d %s\n", set_time() - philo->all->start_time,
+			philo->id, str);
 		pthread_mutex_unlock(&philo->all->mutex);
 	}
 }
@@ -44,7 +56,7 @@ void	free_and_exit(t_all *all)
 	exit(0);
 }
 
-int	main(void)
+int	set_time(void)
 {
 	struct timeval	time;
 

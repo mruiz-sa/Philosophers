@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:21:45 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/09 18:15:09 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/10 12:30:08 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ void	is_eating(t_philo *philo)
 {
 	print_actions(philo, "is eating");
 	pthread_mutex_lock(&philo->all->mutex);
+	philo->last_meal = set_time() - philo->all->start_time;
 }

@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:26 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/09 12:35:37 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/09 16:41:18 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 	{
 		if (convert(&all, av) == 1)
 		{
-			philo_start(&all);
+			start_routine(&all);
 		}
 	}
 }

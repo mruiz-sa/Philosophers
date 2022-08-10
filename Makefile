@@ -6,7 +6,7 @@
 #    By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 19:11:27 by mruiz-sa          #+#    #+#              #
-#    Updated: 2022/08/09 13:38:36 by mruiz-sa         ###   ########.fr        #
+#    Updated: 2022/08/09 17:22:00 by mruiz-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC = ./srcs/check_and_convert_args.c \
 		./srcs/set_philo_stats.c \
 		./srcs/philo_routine.c \
 		./srcs/utils.c \
+		./srcs/philo_actions.c \
 		./main.c
 		
 

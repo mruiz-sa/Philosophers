@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:57 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/09 13:42:19 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/10 12:08:50 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_all
 	int				time_to_sleep;
 	int				meals_nb;
 	int				philo_dead;
-	int				time;
+	int				start_time;
 	pthread_mutex_t	mutex;
 	pthread_mutex_t	*fork_mutex;
 	t_philo			*philo;
@@ -50,5 +50,10 @@ int		ft_atoi(char *str);
 int		set_philo_stats(t_all *all);
 int		set_time(void);
 void	start_routine(t_all *all);
+int		dead_checker(t_philo *philo);
+void	free_and_exit(t_all *all);
+void	print_actions(t_philo *philo, char *str);
+int		take_forks(t_philo *philo);
+void	is_eating(t_philo *philo);
 
 #endif
