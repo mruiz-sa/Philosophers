@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 11:02:20 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/10 12:25:20 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/11 12:25:28 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include<sys/time.h>
 #include<stdlib.h>
 #include<pthread.h>
+#include<unistd.h>
 #include<stdio.h>
 
 void	ft_sleep(int time_to_eat, t_philo *philo)

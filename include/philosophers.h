@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:57 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/10 12:08:50 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/11 12:23:06 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,8 @@ void	free_and_exit(t_all *all);
 void	print_actions(t_philo *philo, char *str);
 int		take_forks(t_philo *philo);
 void	is_eating(t_philo *philo);
+void	is_sleeping(t_philo *philo);
+void	ft_sleep(int time_to_eat, t_philo *philo);
+void	is_thinking(t_philo *philo);
 
 #endif
