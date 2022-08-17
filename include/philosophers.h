@@ -58,5 +58,6 @@ void	is_eating(t_philo *philo);
 void	is_sleeping(t_philo *philo);
 void	ft_sleep(int time_to_eat, t_philo *philo);
 void	is_thinking(t_philo *philo);
+void	free_philo(t_all *all);
 
 #endif

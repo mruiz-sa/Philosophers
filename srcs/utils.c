@@ -57,6 +57,12 @@ void	free_and_exit(t_all *all)
 	exit(0);
 }
 
+void	free_philo(t_all *all)
+{
+	free(all->philo);
+	free(all->fork_mutex);
+}
+
 int	set_time(void)
 {
 	struct timeval	time;

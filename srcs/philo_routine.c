@@ -13,6 +13,18 @@
 #include "../include/philosophers.h"
 #include<pthread.h>
 
+void	join_threads(t_all *all)
+{
+	int	i;
+
+	i = 0;
+	while (i < all->philo_nb)
+	{
+		pthread_join(all->philo[i].thread_id, NULL);
+		i++;
+	}
+}
+
 void	*routine(void *arg)
 {
 	t_philo	*philo;

@@ -18,6 +18,7 @@ SRC = ./srcs/check_and_convert_args.c \
 		./srcs/philo_routine.c \
 		./srcs/utils.c \
 		./srcs/philo_actions.c \
+		./srcs/constant_checker.c \
 		./main.c
 		
 

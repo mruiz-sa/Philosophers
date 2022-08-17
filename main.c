@@ -21,6 +21,9 @@ int	main(int ac, char **av)
 		if (convert(&all, av) == 1)
 		{
 			start_routine(&all);
+			constant_checker(&all);
+			join_threads(&all);
+			free_philo(&all);
 		}
 	}
 }
