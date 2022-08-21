@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:57 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/11 12:23:06 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/21 19:57:54 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int		set_philo_stats(t_all *all);
 int		set_time(void);
 void	start_routine(t_all *all);
 int		dead_checker(t_philo *philo);
-void	free_and_exit(t_all *all);
 void	print_actions(t_philo *philo, char *str);
 int		take_forks(t_philo *philo);
 void	is_eating(t_philo *philo);
@@ -59,5 +58,7 @@ void	is_sleeping(t_philo *philo);
 void	ft_sleep(int time_to_eat, t_philo *philo);
 void	is_thinking(t_philo *philo);
 void	free_philo(t_all *all);
+void	*constant_checker(void *arg);
+void	join_threads(t_all *all);
 
 #endif

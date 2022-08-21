@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:51 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/09 10:41:09 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/21 19:55:37 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ int	fork_mutex_init(t_all *all)
 	i = 0;
 	all->fork_mutex = malloc(sizeof(pthread_mutex_t) * all->philo_nb);
 	if (!all->fork_mutex)
-	{
-		free(all->fork_mutex);
 		return (0);
-	}
 	while (i < all->philo_nb)
 	{
 		pthread_mutex_init(&all->fork_mutex[i], NULL);

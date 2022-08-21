@@ -1,5 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   constant_checker.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/21 19:20:02 by mruiz-sa          #+#    #+#             */
+/*   Updated: 2022/08/21 19:51:11 by mruiz-sa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/philosophers.h"
 #include<pthread.h>
+#include<stdio.h>
+#include<unistd.h>
 
 int	check_last_meal(t_philo *philo)
 {
@@ -27,7 +41,7 @@ int	check_cadavers(t_all *all)
 	return (1);
 }
 
-void	constant_checker(void *arg)
+void	*constant_checker(void *arg)
 {
 	t_all	*check;
 
@@ -38,7 +52,7 @@ void	constant_checker(void *arg)
 		if (check_cadavers(check) == 0)
 		{
 			usleep(100);
-			return(pthread_mutex_unlock(&check->mutex), NULL);
+			return (pthread_mutex_unlock(&check->mutex), NULL);
 		}
 		pthread_mutex_unlock(&check->mutex);
 		usleep(200);

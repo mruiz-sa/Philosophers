@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:41 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/09 18:34:42 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/21 19:57:25 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ int	set_philo_stats(t_all *all)
 	i = 0;
 	all->philo = malloc(sizeof(t_philo) * all->philo_nb);
 	if (!all->philo)
-	{
-		free(all->philo);
 		return (0);
-	}
 	while (i < all->philo_nb)
 	{
 		all->philo[i].time_to_die = all->time_to_die;
