@@ -6,13 +6,14 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:21:45 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/22 19:04:17 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/22 20:49:13 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philosophers.h"
 #include<pthread.h>
-#include<stdio.h>
+#include<stdlib.h>
+
 
 int	take_forks(t_philo *philo)
 {
