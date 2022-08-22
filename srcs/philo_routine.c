@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 10:45:10 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/21 19:56:58 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/22 18:22:34 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@ void	*routine(void *arg)
 	philo = (t_philo *)arg;
 	while (philo->all->philo_dead == 0)
 	{
-		if (dead_checker(philo) == 1)
+		if (dead_checker(philo) == 1 || philo->all->philos_finished_eating == 0)
 			return (0);
 		take_forks(philo);
-		if (dead_checker(philo) == 1)
+		if (dead_checker(philo) == 1 || philo->all->philos_finished_eating == 0)
 		{
 			pthread_mutex_unlock(philo->left_fork);
 			pthread_mutex_unlock(philo->right_fork);
 			return (0);
 		}
 		is_eating(philo);
-		if (dead_checker(philo) == 1)
+		if (dead_checker(philo) == 1 || philo->all->philos_finished_eating == 0)
 			return (0);
 		is_sleeping(philo);
-		if (dead_checker(philo) == 1)
+		if (dead_checker(philo) == 1 || philo->all->philos_finished_eating == 0)
 			return (0);
 		is_thinking(philo);
 	}

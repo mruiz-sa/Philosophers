@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 19:20:02 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/21 19:51:11 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/22 18:50:55 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	*constant_checker(void *arg)
 	while (1)
 	{
 		pthread_mutex_lock(&check->mutex);
-		if (check_cadavers(check) == 0)
+		if (check_cadavers(check) == 0 || check->philos_finished_eating == 0)
 		{
 			usleep(100);
 			return (pthread_mutex_unlock(&check->mutex), NULL);

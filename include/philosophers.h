@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:57 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/21 19:57:54 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/22 17:59:30 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_all
 	int				time_to_eat;
 	int				time_to_sleep;
 	int				meals_nb;
+	int				philos_finished_eating;
 	int				philo_dead;
 	int				start_time;
 	pthread_mutex_t	mutex;

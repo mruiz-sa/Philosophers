@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:21:51 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/21 19:55:37 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/22 18:44:59 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	convert(t_all *all, char **av)
 	else
 		all->meals_nb = -1;
 	all->philo_dead = 0;
+	all->philos_finished_eating = all->philo_nb;
 	if (fork_mutex_init(all) == 0)
 		return (0);
 	if (set_philo_stats(all) == 0)

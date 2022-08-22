@@ -6,12 +6,13 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:21:45 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/11 12:27:18 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/22 19:04:17 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philosophers.h"
 #include<pthread.h>
+#include<stdio.h>
 
 int	take_forks(t_philo *philo)
 {
@@ -47,8 +48,12 @@ void	is_eating(t_philo *philo)
 	pthread_mutex_unlock(&philo->all->mutex);
 	ft_sleep(philo->all->time_to_eat, philo);
 	pthread_mutex_lock(&philo->all->mutex);
-	if (philo->meals_nb != -1)
-		philo->meals_nb++;
+	if (philo->all->meals_nb != -1 && philo->meals_nb > 0)
+	{
+		philo->meals_nb--;
+		if (philo->meals_nb == 0)
+			philo->all->philos_finished_eating--;
+	}
 	pthread_mutex_unlock(&philo->all->mutex);
 	pthread_mutex_unlock(philo->left_fork);
 	pthread_mutex_unlock(philo->right_fork);
