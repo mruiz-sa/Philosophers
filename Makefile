@@ -6,7 +6,7 @@
 #    By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 19:11:27 by mruiz-sa          #+#    #+#              #
-#    Updated: 2022/08/21 19:35:26 by mruiz-sa         ###   ########.fr        #
+#    Updated: 2022/08/24 18:15:31 by mruiz-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = ./srcs/check_and_convert_args.c \
 
 OBJECTS = $(SRC:.c=.o)
 
-FLAGS = -Wall -Werror -Wextra -g3
+FLAGS = -Wall -Werror -Wextra -fsanitize=address -g3
 
 CC = gcc
 

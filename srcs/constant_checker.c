@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 19:20:02 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/22 19:50:07 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/24 18:57:20 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	*constant_checker(void *arg)
 			return (pthread_mutex_unlock(&check->mutex), NULL);
 		}
 		pthread_mutex_unlock(&check->mutex);
-		usleep(200);
+		usleep(100);
 	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 11:02:20 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/21 19:57:40 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/24 18:43:56 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_sleep(int time_to_eat, t_philo *philo)
 	start = set_time();
 	while ((set_time() - start) < time_to_eat
 		&& dead_checker(philo) == 0)
-		usleep(50);
+		usleep(100);
 }
 
 void	print_actions(t_philo *philo, char *str)
