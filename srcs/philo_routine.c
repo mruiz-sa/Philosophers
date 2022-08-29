@@ -6,7 +6,7 @@
 /*   By: mruiz-sa <mruiz-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 10:45:10 by mruiz-sa          #+#    #+#             */
-/*   Updated: 2022/08/22 20:48:22 by mruiz-sa         ###   ########.fr       */
+/*   Updated: 2022/08/29 10:02:57 by mruiz-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	start_routine(t_all *all)
 			(void *)&all->philo[i]);
 		i++;
 	}
+	i = 0;
 	while (i < all->philo_nb)
 	{
 		pthread_join(all->philo[i].thread_id, NULL);
